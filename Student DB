@@ -1,0 +1,63 @@
+#Learning the basics of SQL
+
+1. Create a table name student with the following attributes (data types are shown in the parenthesis): Roll No (Integer), Name (varchar(50)), Gender (Char), CGPA (Float)
+MySQL code => CREATE TABLE student (
+    RollNo INT PRIMARY KEY,
+    Name VARCHAR(50),
+    Gender CHAR(1),
+    CGPA FLOAT
+);
+
+2. Insert at least ten records into the table.
+mysqp code => INSERT INTO student (RollNo, Name, Gender, CGPA) VALUES
+(1, 'Alice', 'F', 7.8),
+(2, 'Bob', 'M', 6.5),
+(3, 'Charlie', 'M', 8.2),
+(4, 'Diana', 'F', 5.9),
+(5, 'Ethan', 'M', 6.9),
+(6, 'Fiona', 'F', 7.2),
+(7, 'George', 'M', 8.0),
+(8, 'Hannah', 'F', 6.0),
+(9, 'Ian', 'M', 7.5),
+(10, 'Jane', 'F', 5.5);
+
+3. Add a new column to the table, for the Date of Birth (Date). Use the date data type to store this. Also, update the date of birth of all the records\
+code => ALTER TABLE student ADD DOB DATE;
+
+UPDATE student SET DOB = '2005-04-15' WHERE RollNo = 1;
+UPDATE student SET DOB = '2006-07-20' WHERE RollNo = 2;
+UPDATE student SET DOB = '2007-08-10' WHERE RollNo = 3;
+UPDATE student SET DOB = '2005-12-05' WHERE RollNo = 4;
+UPDATE student SET DOB = '2006-03-18' WHERE RollNo = 5;
+UPDATE student SET DOB = '2007-09-23' WHERE RollNo = 6;
+UPDATE student SET DOB = '2004-01-30' WHERE RollNo = 7;
+UPDATE student SET DOB = '2006-11-14' WHERE RollNo = 8;
+UPDATE student SET DOB = '2007-05-27' WHERE RollNo = 9;
+UPDATE student SET DOB = '2005-06-09' WHERE RollNo = 10;
+
+4. Display the record of the student whose CGPA is the lowest from the table.
+code => SELECT * FROM student
+WHERE CGPA = (SELECT MIN(CGPA) FROM student);
+
+5. Display only those students whose CGPA lies in the range of [6, 8]
+code => SELECT * FROM student
+WHERE CGPA BETWEEN 6 AND 8;
+
+6. Order the data in the tables based on CGPA from ascending to descending.
+code =>SELECT * FROM student
+ORDER BY CGPA DESC;
+
+7. Display the records for students with the smallest and the largest CGPA
+code =>-- Smallest CGPA
+SELECT * FROM student
+WHERE CGPA = (SELECT MIN(CGPA) FROM student);
+
+-- Largest CGPA
+SELECT * FROM student
+WHERE CGPA = (SELECT MAX(CGPA) FROM student);
+
+8.  Display only those students whose CGPA lies in the range of [6, 8] and whose DOB is after 1-6-2006.
+code =>SELECT * FROM student
+WHERE CGPA BETWEEN 6 AND 8
+AND DOB > '2006-06-01';
+
