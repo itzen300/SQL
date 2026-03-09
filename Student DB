@@ -1,4 +1,8 @@
 #Learning the basics of SQL
+This lab is the practical demonstration of theory and hand-on learning in a RDMS simulated platform MySQL with the help of simple but comprehensive situation.
+
+---
+
 
 1. Create a table name student with the following attributes (data types are shown in the parenthesis): Roll No (Integer), Name (varchar(50)), Gender (Char), CGPA (Float)
 MySQL code => CREATE TABLE student (
