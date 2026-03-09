@@ -25,5 +25,6 @@ Learning practically the RDBMS (Relational DataBase Management System) via the a
 | Import SQL dump            | `mysql -u root -p dbname < dumpfile.sql`          | (file redirection)                                      |
 | Export SQL dump            | `mysqldump -u root -p dbname > dumpfile.sql`      | (file redirection)                                      |
 | Check MySQL service status | *(inside MySQL: no direct)*                       | `systemctl status mysql` or `service mysql status`      |
-| Start/stop MySQL service   | *(inside MySQL: no direct)*                       | `sudo systemctl start mysql` / `stop mysql`             |
+| Start/stop MySQL service   | *(inside MySQL: no direct)*                       | `sudo systemctl start mysql` / `stop mysql`    
+| File Nature                |                                                   | file
 --------------------------------------------------------------------------------------------------------------------------------------------
